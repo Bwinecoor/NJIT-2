@@ -70,6 +70,7 @@ $(document).ready( function() {
 	
 	// This initially hides the photos' metadata information
 	$('.details').eq(0).hide();
+	fetchJSON();
 	
 });
 
@@ -97,7 +98,7 @@ function GalleryImage() {
 
 function fetchJSON() {
 	mRequest.onreadystatechange = function () {
-		if (this.readyState >= 200 && this.status < 400) {
+		if (this.readyState == 4 && this.status >= 200) {
 			var mJson = JSON.parse(mRequest.responseText);
 			console.log(mJson)
 		} else {
@@ -105,6 +106,6 @@ function fetchJSON() {
 	}
 	
 }
-mRequest.open(GET, mUrl, true)
+mRequest.open("GET", mUrl)
 mRequest.send()
 }
