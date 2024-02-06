@@ -33,10 +33,15 @@ function animate() {
 /************* DO NOT TOUCH CODE ABOVE THIS LINE ***************/
 
 function swapPhoto() {
-	//Add code here to access the #slideShow element.
-	//Access the img element and replace its source
-	//with a new image from your images array which is loaded 
-	//from the JSON string
+	if (mCurrentIndex >= mJson.images.length()) {
+		mCurrentIndex = 0;
+	} else {
+		console.log('Error')
+	}
+	if (mCurrentIndex < 0) {
+		mCurrentIndex.length() = mImages.img[-1];
+	}
+	
 	console.log('swap photo');
 }
 
