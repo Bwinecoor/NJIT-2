@@ -41,6 +41,17 @@ function swapPhoto() {
 	if (mCurrentIndex < 0) {
 		mCurrentIndex.length() = mImages.img[-1];
 	}
+
+	let photoElement = document.getElementById('photo')
+	photoElement.src = mImages[mCurrentIndex].img
+	let location = document.getElementsByClassName('location')[0];
+	let description = document.getElementsByClassName('description')[0];
+	let date = document.getElementsByClassName('date')[0];
+	location.innerHTML = "Location: " + mImages[mCurrentIndex].location;
+	description.innerHTML = "Description: " + mImages[mCurrentIndex].description;
+	date.innerHTML = "Date: " + mImages[mCurrentIndex].date;
+	mLastFrameTime = 0;
+	mCurrentIndex += 1;
 	
 	console.log('swap photo');
 }
