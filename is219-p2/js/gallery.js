@@ -33,7 +33,7 @@ function animate() {
 /************* DO NOT TOUCH CODE ABOVE THIS LINE ***************/
 
 function swapPhoto() {
-	if (mCurrentIndex >= mJson.images.length()) {
+	if (mCurrentIndex >= mImages.length) {
 		mCurrentIndex = 0;
 	} else {
 		console.log('Error')
@@ -41,6 +41,17 @@ function swapPhoto() {
 	if (mCurrentIndex < 0) {
 		mCurrentIndex.length() = mImages.img[-1];
 	}
+
+	let photoElement = document.getElementById('photo')
+	photoElement.src = mImages[mCurrentIndex].img
+	let location = document.getElementsByClassName('location')[0];
+	let description = document.getElementsByClassName('description')[0];
+	let date = document.getElementsByClassName('date')[0];
+	location.innerHTML = "Location: " + mImages[mCurrentIndex].location;
+	description.innerHTML = "Description: " + mImages[mCurrentIndex].description;
+	date.innerHTML = "Date: " + mImages[mCurrentIndex].date;
+	mLastFrameTime = 0;
+	mCurrentIndex += 1;
 	
 	console.log('swap photo');
 }
@@ -85,21 +96,33 @@ window.addEventListener('load', function() {
 
 }, false);
 
-function GalleryImage() {
-	//implement me as an object to hold the following data about an image:
-	//1. location where photo was taken
-	var location;
+// function GalleryImage() {
+// 	//implement me as an object to hold the following data about an image:
+// 	//1. location where photo was taken
+// 	var location;
 	
-	//2. description of photo
-	var description;
+// 	//2. description of photo
+// 	var description;
 	
-	//3. the date when the photo was taken
-	var date;
+// 	//3. the date when the photo was taken
+// 	var date;
 	
-	//4. either a String (src URL) or an an HTMLImageObject (bitmap of the photo. https://developer.mozilla.org/en-US/docs/Web/API/HTMLImageElement)
-	var image;
+// 	//4. either a String (src URL) or an an HTMLImageObject (bitmap of the photo. https://developer.mozilla.org/en-US/docs/Web/API/HTMLImageElement)
+// 	var image;
 
+// }
+class GalleryImage {
+	constructor(location, description, date, image) {
+		this.location = location;
+		this.description = description;
+		this.date = date;
+		this.img = image;
+	}
 }
+
+// Create a new GalleryImage() for each one
+// Assign the location, description, date, and img for each object 
+// Example:     new GalleryImage(theLocation, theDescription, theDate, theImage)
 
 function fetchJSON() {
 	mRequest.onreadystatechange = function () {
