@@ -44,9 +44,12 @@ function swapPhoto() {
 
 	let photoElement = document.getElementById('photo')
 	photoElement.src = mImages[mCurrentIndex].img
+	
 	let location = document.getElementsByClassName('location')[0];
 	let description = document.getElementsByClassName('description')[0];
 	let date = document.getElementsByClassName('date')[0];
+
+
 	location.innerHTML = "Location: " + mImages[mCurrentIndex].location;
 	description.innerHTML = "Description: " + mImages[mCurrentIndex].description;
 	date.innerHTML = "Date: " + mImages[mCurrentIndex].date;
@@ -85,7 +88,7 @@ function makeGalleryImageOnloadCallback(galleryImage) {
 $(document).ready( function() {
 	
 	// This initially hides the photos' metadata information
-	$('.details').eq(0).hide();
+	// $('.details').eq(0).hide();
 	fetchJSON();
 	
 });
@@ -96,21 +99,7 @@ window.addEventListener('load', function() {
 
 }, false);
 
-// function GalleryImage() {
-// 	//implement me as an object to hold the following data about an image:
-// 	//1. location where photo was taken
-// 	var location;
-	
-// 	//2. description of photo
-// 	var description;
-	
-// 	//3. the date when the photo was taken
-// 	var date;
-	
-// 	//4. either a String (src URL) or an an HTMLImageObject (bitmap of the photo. https://developer.mozilla.org/en-US/docs/Web/API/HTMLImageElement)
-// 	var image;
 
-// }
 class GalleryImage {
 	constructor(location, description, date, image) {
 		this.location = location;
@@ -124,11 +113,19 @@ class GalleryImage {
 // Assign the location, description, date, and img for each object 
 // Example:     new GalleryImage(theLocation, theDescription, theDate, theImage)
 
+
+
+
 function fetchJSON() {
 	mRequest.onreadystatechange = function () {
 		if (this.readyState == 4 && this.status >= 200) {
 			var mJson = JSON.parse(mRequest.responseText);
 			console.log(mJson)
+			for (let image of mJson.images) {
+				new GalleryImage(image.imgLocation, image.description, image.date, image.imgPath)
+				let galleryImage = new GalleryImage(image.imgLocation, image.description, image.date, image.imgPath);
+				mImages.push(galleryImage)
+		}
 		} else {
 			console.log("We connected to the server, but it returned on error.");
 	}
