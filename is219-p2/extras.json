@@ -1,0 +1,34 @@
+{
+    "images": [
+        {
+            "imgPath": "img/places/puertorico.jpg",
+            "imgLocation": "Puerto Rico",
+            "description": "Luquillo",
+            "date": "12/31/2023"
+        },
+        {
+            "imgPath": "img/places/greatbritain.jpg",
+            "imgLocation": "Great Britain",
+            "description": "St Paul's",
+            "date": "04/13/2023"
+        },
+        {
+            "imgPath": "img/places/barcelona.jpg",
+            "imgLocation": "Barcelona",
+            "description": "Nativity Facade of the Sagrada Familia",
+            "date": "04/07/2023"
+        },
+        {
+            "imgPath": "img/places/florida.jpg",
+            "imgLocation": "Florida",
+            "description": "Orlando, Disney World, Galaxy's Edge",
+            "date": "02/17/2023"
+        },
+        {
+            "imgPath": "img/places/newjersey.jpg",
+            "imgLocation": "New Jersey",
+            "description": "BAPS Swaminarayan Akshardham",
+            "date": "12/16/2023"
+        }
+  ]
+}
