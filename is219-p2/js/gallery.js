@@ -134,3 +134,7 @@ function fetchJSON() {
 mRequest.open("GET", mUrl)
 mRequest.send()
 }
+
+function rot90(img) {
+    img.id = "rot90";
+}

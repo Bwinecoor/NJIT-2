@@ -1,7 +1,9 @@
 body {
 	overflow: auto;
 	font-family: 'Century Gothic', sans-serif;
-	background-image: url(../img/geometry.jpg);
+	background-image: url(../img/background.gif);
+	background-repeat: no-repeat;
+	background-size: cover;
 }
 
 #photoBooth {
@@ -10,8 +12,9 @@ body {
 	width: 650px;
 	margin-left: auto;
 	margin-right: auto;
-	background-color: white;
-	border-radius: 2px;
+	background-color: rgba(0, 0, 0, 0.377);
+	border-radius: 25px;
+	border: 5px dashed black;
 }	
 
 #slideShow {	
@@ -22,6 +25,7 @@ body {
 	position: relative;
 	width: 80%;
 	margin: 0 auto;
+	border: 5px dashed black;
 }
 
 .moreIndicator {
@@ -63,7 +67,7 @@ body {
 	margin-top: 20px;
 }
 .details {
-	border: 1px #000 dashed;
+	border: 3px #000 dashed;
 	padding: 0px 10px;
 	margin: 20px 0px;
 }
@@ -78,7 +82,7 @@ Make it animate nicely. You'll need CSS3 for this*/
 }
 
 
-#rot90:target {
+#rot90 {
 	opacity: 1;
 	transform: rotate(90deg);
 	transition: transform .3s ease;
@@ -118,3 +122,4 @@ Make it animate nicely. You'll need CSS3 for this*/
 	
 	z-index: 1000;
 }
+
