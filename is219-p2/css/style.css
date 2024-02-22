@@ -1,7 +1,7 @@
 body {
 	overflow: auto;
 	font-family: 'Century Gothic', sans-serif;
-	background-image: url(../img/background.gif);
+	background-image: url(../img/background.jpg);
 	background-repeat: no-repeat;
 	background-size: cover;
 }
@@ -35,6 +35,10 @@ body {
 	z-index: 3;
 	opacity: .8;
 	top: 0px;
+	position: absolute;
+	right: 50%;
+	top: 85%;
+	text-align: center;
 }
 
 .thumbnail {
@@ -63,6 +67,14 @@ body {
 	width: 42px;
 }
 
+#prevPhoto:hover {
+	opacity: 80%;
+}
+
+#nextPhoto:hover {
+	opacity: 80%;
+}
+
 .details p {
 	margin-top: 20px;
 }
@@ -75,51 +87,34 @@ body {
 /*Add CSS styles to rotate the element 90deg
 Make it animate nicely. You'll need CSS3 for this*/
 .rot90 {
-	position: absolute;
-	right: 50%;
-	top: 85%;
-	text-align: center;
-}
-
-
-#rot90 {
 	opacity: 1;
 	transform: rotate(90deg);
-	transition: transform .3s ease;
+	transition: all .3s ease;
 }
+
+
 
 /*Add CSS styles to rotate the element 180deg
 Make it animate nicely. You'll need CSS3 for this*/
 .rot180 {
-	
 	opacity: 1;
-	
-	/* Firefox */
-	-moz-transform: scale(1) rotate(180deg);
-	/* WebKit */
-	-webkit-transform: scale(1) rotate(180deg);
-	/* Opera */
-	-o-transform: scale(1) rotate(180deg);
-	/* Standard */
-	transform: scale(1) rotate(180deg);
-	
-	z-index: 1000;
-
+	transform: rotate(180deg);
+	transition: all 0.3s ease;
 }
 
 /*Add CSS styles to rotate the element 270deg
 Make it animate nicely. You'll need CSS3 for this*/
 .rot270 {
-	transform: rotate(270deg);
-	transition: transform 0.3s ease;
-}
-
-
-.rot270:target {
 	opacity: 1;
-	
-	transform: rotate(0deg);
-	
-	z-index: 1000;
+	transform: rotate(270deg);
+	transition: all 0.3s ease;
 }
 
+
+.details {
+	background-color: rgba(0, 0, 0, 0.377);
+	color: white;
+}
+p {
+	color:white;
+}
